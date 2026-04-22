@@ -1,0 +1,31 @@
+{
+  "memory_tiers": {
+    "session_memory": {
+      "enabled": true,
+      "description": "Temporary context within a single conversation session",
+      "persistence": "session-only"
+    },
+    "daily_notes": {
+      "enabled": true,
+      "description": "Auto-generated notes from each conversation",
+      "storage_path": "./workspace/daily_notes/",
+      "format": "YYYY-MM-DD.md"
+    },
+    "core_memory": {
+      "enabled": true,
+      "files": ["SOUL.md", "USER.md"],
+      "loaded_on_startup": true
+    },
+    "long_term_storage": {
+      "enabled": true,
+      "type": "sqlite",
+      "db_path": "./workspace/memory.db"
+    }
+  },
+  "guardrails": {
+    "allowlist_enabled": true,
+    "allowed_telegram_ids": ["YOUR_TELEGRAM_USER_ID"],
+    "block_unauthorized": true,
+    "log_unauthorized_attempts": true
+  }
+}
